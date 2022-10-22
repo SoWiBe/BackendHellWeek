@@ -1,9 +1,10 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+using TaskMicro.Infrastructure.MongoDb;
 
 namespace TaskMicro.Models;
 
-public class Task
+public class Task : IMongoModel
 {
     [BsonId]
     [BsonRepresentation(BsonType.ObjectId)]
@@ -19,5 +20,5 @@ public class Task
     public string Tag { get; set; }
     
     [BsonElement("Status")]
-    public string Statuc { get; set; }
+    public string Status { get; set; }
 }

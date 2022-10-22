@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using Calabonga.OperationResults;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using TaskMicro.Definitions.Base;
 using TaskMicro.Endpoints.TasksEndpoints.Queries;
@@ -16,11 +17,12 @@ public class TasksEndpoint : AppDefinition
 
     [ProducesResponseType(200)]
     [ProducesResponseType(401)]
-    private async Task<Task> GetTask([FromServices] IMediator mediator, HttpContext context, string id)
+    private async Task<OperationResult<Task>> GetTask([FromServices] IMediator mediator, HttpContext context, string id)
         => await mediator.Send(new GetTaskRequest(id), context.RequestAborted);
+    
     [ProducesResponseType(200)]
     [ProducesResponseType(401)]
-    private async Task<Task> PostTask([FromServices] IMediator mediator, HttpContext context, Task task)
+    private async Task<OperationResult<Task>> PostTask([FromServices] IMediator mediator, HttpContext context, Task task)
         => await mediator.Send(new PostTaskRequest(task), context.RequestAborted);
 
 }

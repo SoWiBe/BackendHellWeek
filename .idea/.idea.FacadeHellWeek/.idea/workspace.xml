@@ -9,7 +9,9 @@
     <projectFile profileName="TaskMicroservice">TaskMicroservice/TaskMicroservice.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b93dbdd-61b2-447e-acfc-4c91d31859c0" name="Changes" comment="" />
+    <list default="true" id="7b93dbdd-61b2-447e-acfc-4c91d31859c0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.FacadeHellWeek/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FacadeHellWeek/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,6 +28,7 @@
     <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2GTWidOm6atX17B7F9mcp6sOqt0" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -139,14 +142,26 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1666413199472</updated>
-      <workItem from="1666413203421" duration="12665000" />
+      <workItem from="1666413203421" duration="13111000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>

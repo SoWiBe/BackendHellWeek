@@ -41,3 +41,10 @@ E:\C# 2022\FacadeHellWeek\TaskMicro\bin\Debug\net6.0\ZstdSharp.dll
 E:\C# 2022\FacadeHellWeek\TaskMicro\bin\Debug\net6.0\runtimes\linux\native\libmongocrypt.so
 E:\C# 2022\FacadeHellWeek\TaskMicro\bin\Debug\net6.0\runtimes\osx\native\libmongocrypt.dylib
 E:\C# 2022\FacadeHellWeek\TaskMicro\bin\Debug\net6.0\runtimes\win\native\mongocrypt.dll
+E:\C# 2022\FacadeHellWeek\TaskMicro\bin\Debug\net6.0\Calabonga.OperationResults.dll
+E:\C# 2022\FacadeHellWeek\TaskMicro\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+E:\C# 2022\FacadeHellWeek\TaskMicro\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+E:\C# 2022\FacadeHellWeek\TaskMicro\bin\Debug\net6.0\Newtonsoft.Json.dll
+E:\C# 2022\FacadeHellWeek\TaskMicro\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+E:\C# 2022\FacadeHellWeek\TaskMicro\bin\Debug\net6.0\Swashbuckle.AspNetCore.Newtonsoft.dll
+E:\C# 2022\FacadeHellWeek\TaskMicro\bin\Debug\net6.0\MediatR.Extensions.Microsoft.DependencyInjection.dll

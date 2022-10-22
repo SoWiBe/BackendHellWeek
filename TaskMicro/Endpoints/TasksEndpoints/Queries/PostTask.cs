@@ -1,28 +1,40 @@
-﻿using MediatR;
-using TaskMicro.Services;
+﻿using Calabonga.OperationResults;
+using MediatR;
+using TaskMicro.Infrastructure.MongoDb;
+using Task = TaskMicro.Models.Task;
 
 namespace TaskMicro.Endpoints.TasksEndpoints.Queries;
 
-public record PostTaskRequest(Models.Task Task) : IRequest<Models.Task>;
-public class PostTaskRequestHandler : IRequestHandler<PostTaskRequest, Models.Task>
+public record PostTaskRequest(Models.Task Task) : IRequest<OperationResult<Models.Task>>;
+public class PostTaskRequestHandler : IRequestHandler<PostTaskRequest, OperationResult<Models.Task>>
 {
-    private readonly TasksService _service;
+    private readonly IDbWorker<Models.Task> _repository;
 
-    public PostTaskRequestHandler(TasksService service)
+    public PostTaskRequestHandler(IDbWorker<Models.Task> repository)
     {
-        _service = service;
+        _repository = repository;
     }
-    public async Task<Models.Task> Handle(PostTaskRequest request, CancellationToken cancellationToken)
+    public async Task<OperationResult<Models.Task>> Handle(PostTaskRequest request, CancellationToken cancellationToken)
     {
-        Models.Task task = new Models.Task();
         try
         {
-            task = _service.Create(request.Task);
-            return task;
+            await _repository.AddNewRecord(request.Task);
         }
         catch (Exception ex)
         {
-            return task;
+            return new OperationResult<Task> { Error = ex };
         }
+
+        return new OperationResult<Task>
+        {
+            Result = new Models.Task
+            {
+                Id = request.Task.Id,
+                Description = request.Task.Description, 
+                Status = request.Task.Status, 
+                Tag = request.Task.Status,
+                Title = request.Task.Title
+            }
+        };
     }
 }

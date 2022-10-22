@@ -1,29 +1,30 @@
-﻿using MediatR;
-using TaskMicro.Services;
+﻿using Calabonga.OperationResults;
+using MediatR;
+using TaskMicro.Infrastructure.MongoDb;
+using Task = TaskMicro.Models.Task;
 
 namespace TaskMicro.Endpoints.TasksEndpoints.Queries;
 
-public record GetTaskRequest(string id) : IRequest<Models.Task>;
+public record GetTaskRequest(string id) : IRequest<OperationResult<Models.Task>>;
 
-public class GetTaskRequestHandler : IRequestHandler<GetTaskRequest, Models.Task>
+public class GetTaskRequestHandler : IRequestHandler<GetTaskRequest, OperationResult<Models.Task>>
 {
-    private readonly TasksService _service;
+    private readonly IDbWorker<Models.Task> _repository;
 
-    public GetTaskRequestHandler(TasksService service)
+    public GetTaskRequestHandler(IDbWorker<Models.Task> service)
     {
-        _service = service;
+        _repository = service;
     }
-    public async Task<Models.Task> Handle(GetTaskRequest request, CancellationToken cancellationToken)
+    public async Task<OperationResult<Models.Task>> Handle(GetTaskRequest request, CancellationToken cancellationToken)
     {
-        Models.Task task = new Models.Task();
         try
         {
-            task = _service.Get(request.id);
-            return task;
+            var taskFromDb = _repository.GetRecordsByFilter(x => x.Id == request.id);
+            return await taskFromDb;
         }
         catch (Exception ex)
         {
-            return task;
+            return new OperationResult<Task> {Error = ex};
         }
     }
 }

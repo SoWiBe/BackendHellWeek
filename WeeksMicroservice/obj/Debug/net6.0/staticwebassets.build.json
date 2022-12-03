@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "1kBiTXoUhoDW4rYg7TziRUi5SGPYRWNB6JvZ9Coii0M=",
+  "Source": "WeeksMicroservice",
+  "BasePath": "_content/WeeksMicroservice",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
